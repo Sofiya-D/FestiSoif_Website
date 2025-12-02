@@ -1,5 +1,6 @@
 # FestiSoif Website
-Repo pour la partie Web de notre module CAI à l'ENIB
+Repo pour la partie Web de notre module CAI à l'ENIB.  
+Nous sommes le **Groupe-02**.
 
 ## Contributeurs, roles et distribution des pages
 
@@ -56,15 +57,24 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 * Une petite légende figure en bas à droite de l'écran pour préciser le sens des icônes s'affichant sur la carte.  
 * L'utilisateur peut saisir du texte dans la barre de recherche pour chercher un point d'intérêt spécifique.
 * L'utilisateur peut cliquer sur l'icône d'un point d'intérêt pour accéder à la page de détails du point d'intérêt.
-* L'utilisateur peut cliquer sur le bouton `Mode RA` pour accéder à la page RA.
+* L'utilisateur peut cliquer sur le bouton `Mode RA` pour accéder à la page RA. (En théorie, se connecter à ses lunettes RA.)
 * L'utilisateur peut cliquer sur le bouton `Profil` pour accéder à la page de profil.   
 
 ### Page RA
 #### Affighage 
 #### Interactions 
+* L'utilisateur peut cliquer sur l'icône de son profil pour accéder à la page de profil.  
+* L'utilisateur peut cliquer sur la flèche de retour pour retourner à la page précédente, depuis laquelle il est arrivé.  
+* ~~L'utilisateur peut cliquer sur le bouton `Utiliser mes lunettes RA` pour accéder à la page RA~~ -> Nous y sommes déjà, ce bouton ne sert à rien...  
+* L'utilisateur peut cliquer sur le bouton `Quitter la RA` pour retourner à la page précédente, depuis laquelle il est arrivé.  
 
 ### Page détails (du point d'intérêt)
 #### Affighage 
 #### Interactions 
+* L'utilisateur peut cliquer sur le bouton `Y aller` pour accéder à la page RA. (Réel accès à la page RA cette fois.)
+* L'utilisateur peut cliquer sur le bouton `Commencer sur Lunettes RA` pour accéder à la page RA. (En théorie, se connecter à ses lunettes RA.)
 
 ### Page mon profil
+#### Affighage 
+#### Interactions 
+* L'utilisateur peut cliquer sur le bouton `Retour` pour retourner à la page précédente, depuis laquelle il est arrivé.
