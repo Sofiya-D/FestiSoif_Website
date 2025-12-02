@@ -4,7 +4,6 @@ import SeConnecterPage from "./pages/SeConnecterPage";
 import BottomBar from "./components/bar/BottomBar";
 import SignupPage from "./pages/SignupPage";
 import DetailsPage from "./pages/DetailsPage";
-import LoginPage from "./pages/LoginPage";
 
 
 export default function App() {
