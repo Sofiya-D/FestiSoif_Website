@@ -4,7 +4,7 @@ import {Droplets} from 'lucide-react'
 function DetailsPage() {
   return (
     <div className='w-full h-full'>
-      <div  className='w-full bg-yellow-200 text-black font-bold text-2xl '>
+      <div  className='w-full bg-yellow-200 text-black font-bold text-2xl'>
         {"<"}
       </div>
       <div className='flex flex-col gap-2 bg-red-500 w-full h-full  items-center p-[5%] mt-10'>
