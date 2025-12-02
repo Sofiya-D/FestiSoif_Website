@@ -1,17 +1,28 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import SeConnecterPage from "./pages/SeConnecterPage";
 import BottomBar from "./components/bar/BottomBar";
+import SignupPage from "./pages/SignupPage";
 
 
 export default function App() {
+  const url = window.location.href;
+  const pathname = url.split("/")[3];
+  const paths = ["seconnecter", "signup"];
+
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50 text-gray-800">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/seconnecter" element={<SeConnecterPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+        {console.log(pathname)}
         </Routes>
       </div>
-      <BottomBar />
+      { !paths.includes(pathname) &&
+        <BottomBar />
+      }
     </BrowserRouter>
   );
 }
