@@ -13,7 +13,7 @@ function DetailsPage() {
           <Droplets size={100}/>
         </div>
         <div className='flex flex-col justify-center items-center px-2 w-full h-[25%] bg-yellow-200 rounded-md'>
-          <h2 className='bg-white'>120m</h2>
+          <h2 className='text-white text-2xl font-extrabold'>120m</h2>
           <h3>Faible</h3>
           <h3>Proche de la scène principale</h3>
         </div>
