@@ -15,3 +15,9 @@ Repo for the Web part of our CAI module at ENIB
 
 * HTML/CSS
 * Framework: React
+
+## Cahier des charges
+
+### page 1
+### page 2
+### page 3
