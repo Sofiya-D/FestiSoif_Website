@@ -13,17 +13,6 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50 text-gray-800">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/seconnecter" element={<SeConnecterPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-        {console.log(pathname)}
-        </Routes>
-      </div>
-      { !paths.includes(pathname) &&
-        <BottomBar />
-      }
       <div className="flex flex-row h-screen w-screen">
         <div className="h-[90%] w-full bg-gray-50 text-gray-800">
           <Routes>
@@ -31,8 +20,11 @@ export default function App() {
             <Route path="/details" element={<DetailsPage />} />
           </Routes>
         </div>
-        <BottomBar />
+        { !paths.includes(pathname) &&
+          <BottomBar />
+        }
       </div>
+      
     </BrowserRouter>
   );
 }
