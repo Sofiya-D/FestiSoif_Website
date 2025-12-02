@@ -5,11 +5,12 @@ Repo for the Web part of our CAI module at ENIB
 
 | Contributor        | Role      |
 | ------------------ | --------- |
-| Ayyoub Boulahri    |  |
-| Yassine El Mesbahy |  |
-| Sofiya Debois      |  |
-| Ilias Reguig       |  |
-| Zakaria Boumline   |  |
+| Ayyoub Boulahri    | map + RA |
+| Yassine El Mesbahy | détails |
+| Sofiya Debois      | profil |
+| Ilias Reguig       | register + connexion |
+| Zakaria Boumline   | login |
+Accueil
 
 ## Technologies
 
@@ -18,6 +19,6 @@ Repo for the Web part of our CAI module at ENIB
 
 ## Cahier des charges
 
-### page 1
+### 
 ### page 2
 ### page 3
