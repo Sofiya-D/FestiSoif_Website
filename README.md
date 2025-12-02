@@ -10,3 +10,8 @@ Repo for the Web part of our CAI module at ENIB
 | Sofiya Debois      |  |
 | Ilias Reguig       |  |
 | Zakaria Boumline   |  |
+
+## Technologies
+
+* HTML/CSS
+* Framework: React
