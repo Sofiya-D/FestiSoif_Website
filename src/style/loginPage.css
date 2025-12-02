@@ -1,0 +1,133 @@
+/* === LAYOUT GENERAL === */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-top: 40px;
+  gap: 25px;
+  background: #f9fafb;
+}
+
+/* === LOGO === */
+.logo-echo {
+  width: 180px;
+  margin-bottom: 5px;
+}
+
+/* === GOOGLE + FACEBOOK === */
+.social-buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+
+  background: #ffffff;
+  border-radius: 18px;
+  border: none;
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Icônes */
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* === BOUTONS BLEU + ORANGE === */
+.main-btn {
+  width: 320px;
+  padding: 18px 0;
+  text-align: center;
+
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+
+  border: none;
+  border-radius: 16px;
+
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.2s ease;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+}
+
+.login-btn {
+  background: #2563eb;
+}
+
+.register-btn {
+  background: #fb5a3a;
+}
+
+/* === CARTE QR CODE === */
+.qr-card {
+  width: 330px;
+  padding: 25px;
+
+  background: linear-gradient(135deg, #915aff, #4a6cf7);
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  gap: 15px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.qr-img {
+  width: 140px;
+  height: 140px;
+}
+
+/* === BOUTON INVITÉ === */
+.guest-btn {
+  width: 320px;
+  padding: 18px 0;
+
+  background: #000;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+
+  border-radius: 16px;
+  border: none;
+
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.guest-btn:hover {
+  transform: translateY(-2px);
+}
