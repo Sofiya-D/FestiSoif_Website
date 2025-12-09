@@ -38,7 +38,7 @@ export default function MapPointer({ points }) {
                 icon={createMapPinIcon(p.type)}
                 eventHandlers={{
                   click: () => {
-                    navigate("/details/" + p.id);
+                    navigate("/details/" + p.id, { distance: dist});
                   },
                 }}
               >
