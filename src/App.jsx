@@ -5,6 +5,7 @@ import BottomBar from "./components/bar/BottomBar";
 import SignupPage from "./pages/SignupPage";
 import DetailsPage from "./pages/DetailsPage";
 import LoginPage from "./pages/LoginPage";
+import PhoneRA from "./pages/PhoneRA";
 import ProfilePage from "./pages/ProfilePage";
 
 
@@ -21,8 +22,9 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/seconnecter" element={<SeConnecterPage />} />
             <Route path="/signup" element={<SignupPage />} />
-            <Route path="/details" element={<DetailsPage />} />
+            <Route path="/details/:id" element={<DetailsPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/phonera" element={<PhoneRA />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </div>
