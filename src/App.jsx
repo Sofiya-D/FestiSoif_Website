@@ -5,6 +5,8 @@ import BottomBar from "./components/bar/BottomBar";
 import SignupPage from "./pages/SignupPage";
 import DetailsPage from "./pages/DetailsPage";
 import LoginPage from "./pages/LoginPage";
+import PhoneRA from "./pages/PhoneRA";
+
 
 
 export default function App() {
@@ -22,6 +24,7 @@ export default function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/details" element={<DetailsPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/phonera" element={<PhoneRA />} />
           </Routes>
         </div>
         { !paths.includes(pathname) &&

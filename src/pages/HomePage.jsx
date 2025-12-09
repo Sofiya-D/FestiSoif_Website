@@ -1,20 +1,25 @@
 import { useState } from "react";
 import { Search, ChevronLeft, ChevronDown, CircleChevronUp } from "lucide-react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import MapPointer from "../components/HomePage/MapPointer";
 import "leaflet/dist/leaflet.css";
+import { points, maps } from "../js/data"
+import { useMapEvents } from "react-leaflet";
+
+export function MapClick({ onClick }) {
+  useMapEvents({
+    click(e) {
+      onClick([e.latlng.lat, e.latlng.lng]);
+    }
+  });
+
+  return null;
+}
 
 export default function HomePage() {
   const [legendOpen, setLegendOpen] = useState(true);
   const [mapType, setMapType] = useState(0);
   const center = [48.39, -4.48];
-
-  const maps = [
-    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
-    "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
-    "https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
-    "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
-  ]
 
   return (
     <div className="w-screen h-screen overflow-hidden relative">
@@ -27,6 +32,8 @@ export default function HomePage() {
         >
           <TileLayer url={maps[mapType]} />
           <Marker position={center} />
+          <MapPointer points={points} />
+          <MapClick onClick={(pos) => console.log("Clicked position:", pos)} />
         </MapContainer>
       </div>
 
