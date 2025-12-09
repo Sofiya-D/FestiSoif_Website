@@ -10,6 +10,7 @@ export default function MapPointer({ points }) {
   const center = map.getCenter();
   const distance = (a, b) => map.distance(a, b);
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user")) || null;
 
   // Function to create a Leaflet div icon for a given point type
   const createMapPinIcon = (pointType) => {
@@ -33,15 +34,16 @@ export default function MapPointer({ points }) {
 
         if (dist <= p.radius) {
           return (
-              <Marker
-                position={p.position}
-                icon={createMapPinIcon(p.type)}
-                eventHandlers={{
-                  click: () => {
-                    navigate("/details/" + p.id, { state: { distance: dist}});
-                  },
-                }}
-              >
+            <Marker
+              key={p.id}
+              position={p.position}
+              icon={createMapPinIcon(p.type)}
+              eventHandlers={{
+                click: () => {
+                  navigate("/details/" + p.id, { state: { distance: dist } });
+                },
+              }}
+            >
             </Marker>
 
           );
