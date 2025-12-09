@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import background from "../assets/img/background.jpg";
 import avatar from "../assets/img/avatar.jpg";
 import { ArrowLeft } from "lucide-react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { points } from "../js/data";
 
 export default function PhoneRA() {
 
@@ -16,6 +18,12 @@ export default function PhoneRA() {
         console.error("Camera error:", err);
       });
   }, []);
+
+  const {id} = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const distance = location.state?.distance || 0;
+  let curr = points.find(r => r.id == id);
 
   return (
     <div className="relative w-full h-screen overflow-hidden text-white">
@@ -38,7 +46,7 @@ export default function PhoneRA() {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Back button */}
-      <button className="absolute top-6 left-4 w-10 h-10 bg-gray-200/80 backdrop-blur rounded-full flex items-center justify-center text-black text-2xl shadow">
+      <button onClick={() => navigate(-1)} className="absolute top-6 left-4 w-10 h-10 bg-gray-200/80 backdrop-blur rounded-full flex items-center justify-center text-black text-2xl shadow">
         <ArrowLeft />
       </button>
 
@@ -49,19 +57,19 @@ export default function PhoneRA() {
           className="w-10 h-10 rounded-full border-2 border-white"
         />
         <div className="bg-black/80 px-3 py-1 rounded-full text-white text-sm">
-          Point d'eau - Zone B
+          {curr ? curr.name : "Point inconnu"}
         </div>
       </div>
 
       {/* Distance badge */}
       <div className="absolute top-26 right-4 bg-gray-200/80 p-2 rounded-lg text-black text-center shadow text-sm">
-        <span className="text-lg font-bold">50m</span>
+        <span className="text-lg font-bold">{parseInt(distance)}m</span>
         <br /> restants
       </div>
 
       {/* Center distance label */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 px-4 py-2 rounded-full text-white text-sm">
-        50 m restants
+        {parseInt(distance)} m restants
       </div>
 
       {/* Bottom buttons */}
