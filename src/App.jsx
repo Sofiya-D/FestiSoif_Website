@@ -22,7 +22,6 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/seconnecter" element={<SeConnecterPage />} />
             <Route path="/signup" element={<SignupPage />} />
-            {/* When navigating to details page the id should be specified on the url parameter for example /details/1 */}
             <Route path="/details/:id" element={<DetailsPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/phonera" element={<PhoneRA />} />
