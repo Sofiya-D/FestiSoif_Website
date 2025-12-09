@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import logoEcho from "../assets/echo_logo.png"; 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+// import avatar from "../assets/img/avatar.jpg"
 
 export default function ProfilePage() {
-  // TODO: Add actual user data (username, profile picture)
-  // user = JSON.parse(localstorage.getuser("user"))
-  const [user] = useState({ name: "Username", avatar: logoEcho });
+  const user = JSON.parse(localStorage.getItem("currentUser"))
+  console.log(user)
 
   // Offline toggle (persist in localStorage)
   const [offline, setOffline] = useState(() => {
@@ -30,16 +30,13 @@ export default function ProfilePage() {
     { id: "logout", label: "Déconnexion" },
   ];
 
-  const navigate = useNavigate(); // Useful for a back button if wanted
-  const location = useLocation();
-
+  const navigate = useNavigate();
+  
   function handleSectionClick(id) {
-    // Replace with real routing or modal logic per section
     if (id === "logout") {
-      // example logout flow
-      // clear auth, then navigate to home
-      // localStorage.removeItem('authToken');
-      navigate("/"); // or another route
+      // logout flow: clear auth, then navigate to home
+      localStorage.removeItem('authToken');
+      navigate("/");
     } else {
       // navigate to a settings subsection (optional)
       navigate(`/oups`);
@@ -56,12 +53,17 @@ export default function ProfilePage() {
             Retour
         </button>}
         <img
-          src={user.avatar}
+          src={"/avatars/"+user.icon}
+          // src={avatar}
           alt={`${user.name} avatar`}
           className="w-12 h-12 rounded-full object-cover"
         />
         <div>
-          <div className="text-lg font-semibold">{user.name}</div>
+          <div className="text-lg font-semibold">
+            {
+            user.name
+            }
+            </div>
         </div>
       </header>
 
