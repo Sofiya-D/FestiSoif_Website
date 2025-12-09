@@ -1,33 +1,37 @@
 import React from 'react'
 import {ChevronLeft, Droplets, Toilet, Trash2, Utensils} from 'lucide-react'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { points, PointType } from '../js/data'
 
 
+
 function DetailsPage() {
+  
   const {id} = useParams();
+  const location = useLocation()
+  const navigate = useNavigate()
+  
   let current = points.find(r => r.id == id);
-
-
+  let dist = location.state?.distance
 
   const getIconByType = (type) => {
     switch(type) {
-        case PointType.WATER:
-            return <Droplets color='White' size={100} />;
-        case PointType.TOILET:
-            return <Toilet color='White' size={100} />;
-        case PointType.FOOD:
-            return <Utensils color='White' size={100} />;
-        case PointType.TRASH:
-            return <Trash2 color='White' size={100} />;
-        default:
-            null;
+      case PointType.WATER:
+        return <Droplets color='White' size={100} />;
+      case PointType.TOILET:
+        return <Toilet color='White' size={100} />;
+      case PointType.FOOD:
+        return <Utensils color='White' size={100} />;
+      case PointType.TRASH:
+        return <Trash2 color='White' size={100} />;
+      default:
+        null;
     }
   }
-
+            
   return ( current && 
     <div className='w-full h-full'>
-      <div  className='w-full text-black  mt-5  font-bold text-2xl'>
+      <div  className='w-full text-black  mt-5 font-bold text-2xl cursor-pointer' onClick={() => navigate(-1)}>
         <ChevronLeft size={25} />
       </div>
       <div className='flex flex-col gap-2 w-full h-full  items-center p-[5%] '>
@@ -46,7 +50,7 @@ function DetailsPage() {
           <h2 className='text-white text-5xl font-bold'>
             {
               // Display distance or "0" if not found
-              current.distance ?? "0"
+              parseInt(dist)+'m'
             }
           </h2>
           <h3 className='text-white text-lg font-extrabold opacity-80'>
@@ -63,7 +67,13 @@ function DetailsPage() {
           </h3>
         </div>
         <div className='flex flex-col gap-4 w-full h-[25%] justify-center items-center mt-10 p-[5%]'>
-          <button className='bg-white w-full font-bold text-lg p-2 m-2 rounded-lg border border-gray-300 shadow-lg shadow-black/25'>
+          <button 
+          className='bg-white w-full font-bold text-lg p-2 m-2 rounded-lg border border-gray-300 shadow-lg shadow-black/25 cursor-pointer'
+          onClick={() => {
+              navigate("/phonera/" + id, { state: { distance: dist}});
+          }}
+          >
+          
             Y Aller
           </button>
           <button className='bg-[#3B27F3] w-full font-bold text-lg m-2 text-white p-4 rounded-lg shadow-xl shadow-black/25'>
