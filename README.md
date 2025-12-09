@@ -1,6 +1,6 @@
 # FestiSoif Website
 Repo pour la partie Web de notre module CAI à l'ENIB.  
-Nous sommes le **Groupe-02**.
+Nous sommes le **Groupe-02**.  
 On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 
 ## Contributeurs, roles et distribution des pages
