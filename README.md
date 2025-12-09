@@ -1,36 +1,33 @@
 # FestiSoif Website
 Repo pour la partie Web de notre module CAI à l'ENIB.  
 Nous sommes le **Groupe-02**.
+On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 
 ## Contributeurs, roles et distribution des pages
 
 | Contributeur        | Role      | Pages  |
 | ------------------ | --------- | ------ |
 | Ayyoub Boulahri    | Chef de projet | map + RA |
-| Yassine El Mesbahy |  | détails |
+| Yassine El Mesbahy |  | détails + accueil|
 | Sofiya Debois      |  | profil |
 | Ilias Reguig       |  | register + connexion |
 | Zakaria Boumline   |  | login |  
-
-**Pages restantes:**  
-* Accueil
 
 ## Technologies
 * HTML/CSS
 * Framework: React
 
 ## Cahier des charges
-On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 
 ### Page d'accueil
-#### Affighage
+#### Affichage
 * Le logo de l'application est visible à l'écran.  
 * Un bouton `Commencer` apparaît à l'écran.  
 #### Interactions 
 * Cliquer sur le bouton `Commencer` permet d'accéder à la page de login.  
 
 ### Page login (choix)
-#### Affighage 
+#### Affichage 
 * Le logo de l'application apparaît en haut de l'écran.  
 * Deux boutons de connexion par des applications tierces `Google` et `Facebook` apparaîssent en-dessous.  
 * Un bouton `Se Connecter` apparaît en-dessous.  
@@ -43,7 +40,7 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 * Cliquer sur le bouton `Continuer en tant qu'invité` permet d'accéder à la carte (page map) sans s'identifier.  
 
 ### Page se connecter (à son compte)
-#### Affighage 
+#### Affichage 
 * L'intitulé de la page ("Se conecter") apparaît en haut de l'écran.  
 * Une section `Email` avec un champ de remplissage de texte apparaît en-dessous.  
 * Une section `Mot de passe` avec un champ de remplissage de texte apparaît en-dessous.  
@@ -60,7 +57,7 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 * S'il ne possède pas de compte, l'utilisateur peut cliquer sur le bouton `créer un compte` pour accéder à la page de création de compte.  
 
 ### Page créer un compte
-#### Affighage 
+#### Affichage 
 * L'intitulé de la page ("Créer un compte") apparaît en haut de l'écran.
 * Des champs de remplissage textuels `Nom Complet`, `Email`, `le mot de passe`, `Confirmer le mot de passe` figurent en-dessous.
 * Un bouton `Créer un compte` figure en-dessous.
@@ -71,7 +68,7 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 * S'il s'est trompé précédemment, l'utilisateur peut cliquer sur le bouton `Se connecter` pour se connecter à un compte déjà existant.
 
 ### Page map (homepage)
-#### Affighage 
+#### Affichage 
 * Une carte des environs de l'utilisateur s'affiche à l'écran.  
 * Une barre de recherche figure en haut de l'écran, contenant le prompt `Rechercher un point d'intérêt...`.  
 * Les boutons `Point d'eau`, `Toilettes`, `Resto` et `Scène` figurent juste en-dessous.  
@@ -88,7 +85,7 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 * L'utilisateur peut cliquer sur le bouton de changement de style d'affichage pour changer le style de la carte (light, dark, satellite, topographie...)  
 
 ### Page RA
-#### Affighage 
+#### Affichage 
 * Un bouton flèche de retour apparaît en haut à gauche de l'écran.  
 * Le nom du point d'intérêt vers lequel l'application nous mène s'affiche en haut de l'écran.  
 * L'affichage de la caméra d'affiche à l'écran, permettant d'afficher les éléments de réalité augmentée par-dessus.  
@@ -100,7 +97,7 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 * L'utilisateur peut cliquer sur le bouton `Quitter la RA` pour retourner à la page précédente, depuis laquelle il est arrivé.  
 
 ### Page détails (du point d'intérêt)
-#### Affighage 
+#### Affichage 
 * Un widget avec le nom du point d'intérêt et une icône associée s'affiche en haut de l'écran.  
 * En-dessous se trouve un second widget avec la distance à l'utilisateur, l'affluence (Faible, Moyenne, Elevée), et une courte description de l'emplacement.  
 * Les boutons `Y aller` et `Commencer sur Lunettes RA` se trouvent en-dessous.  
@@ -109,7 +106,7 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 * L'utilisateur peut cliquer sur le bouton `Commencer sur Lunettes RA` pour accéder à la page RA. (En théorie, se connecter à ses lunettes RA.)  
 
 ### Page mon profil
-#### Affighage 
+#### Affichage 
 * Une icône avec la photo de profil de l'utilisateur apparaît en haut à gauche de l'écran, suivie du nom de l'utilisateur.  
 * En-dessous se trouve un libellé "Mode Offline" suivi d'un petit slider (bouton à 2 états).  
 * En-dessous se trouvent en disposition verticale une liste de sections:  
