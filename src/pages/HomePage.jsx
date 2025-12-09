@@ -5,6 +5,7 @@ import MapPointer from "../components/HomePage/MapPointer";
 import "leaflet/dist/leaflet.css";
 import { points, maps } from "../js/data"
 import { useMapEvents } from "react-leaflet";
+import { PointType } from "../js/data";
 
 export function MapClick({ onClick }) {
   useMapEvents({
@@ -20,6 +21,15 @@ export default function HomePage() {
   const [legendOpen, setLegendOpen] = useState(true);
   const [mapType, setMapType] = useState(0);
   const center = [48.39, -4.48];
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeFilter, setActiveFilter] = useState(null);
+
+  const filteredPoints = points.filter((p) => {
+    const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesFilter = activeFilter ? p.type === activeFilter : true;
+    return matchesSearch && matchesFilter;
+  });
+
 
   return (
     <div className="w-screen h-screen overflow-hidden relative">
@@ -32,7 +42,7 @@ export default function HomePage() {
         >
           <TileLayer url={maps[mapType]} />
           <Marker position={center} />
-          <MapPointer points={points} />
+          <MapPointer points={filteredPoints} />
         </MapContainer>
       </div>
 
@@ -50,6 +60,7 @@ export default function HomePage() {
             type="text"
             placeholder="Rechercher un point d'interet..."
             className="flex-1 outline-none text-sm"
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           <Search size={20} className="text-gray-500" />
         </div>
@@ -57,19 +68,43 @@ export default function HomePage() {
 
       {/* Filtres */}
       <div className="absolute top-32 left-0 w-full px-4 flex gap-3 overflow-x-auto no-scrollbar z-10">
-        <button className="px-4 py-2 rounded-xl bg-orange-500 text-white text-sm whitespace-nowrap">
+        <button
+          className={`px-4 py-2 rounded-xl text-sm whitespace-nowrap ${
+            activeFilter === PointType.WATER ? "bg-orange-500 text-white" : "bg-white text-black"
+          }`}
+          onClick={() => setActiveFilter((filter) => filter == PointType.WATER ? null : PointType.WATER)}
+        >
           Point d’eau
         </button>
-        <button className="px-4 py-2 rounded-xl bg-white text-black shadow text-sm whitespace-nowrap">
+
+        <button
+          className={`px-4 py-2 rounded-xl text-sm whitespace-nowrap ${
+            activeFilter === PointType.TOILET ? "bg-orange-500 text-white" : "bg-white text-black"
+          }`}
+          onClick={() => setActiveFilter((filter) => filter == PointType.TOILET ? null : PointType.TOILET)}
+        >
           Toilettes
         </button>
-        <button className="px-4 py-2 rounded-xl bg-gray-300 text-black text-sm whitespace-nowrap">
+
+        <button
+          className={`px-4 py-2 rounded-xl text-sm whitespace-nowrap ${
+            activeFilter === PointType.FOOD ? "bg-orange-500 text-white" : "bg-white text-black"
+          }`}
+          onClick={() => setActiveFilter((filter) => filter == PointType.FOOD ? null : PointType.FOOD)}
+        >
           Resto
         </button>
-        <button className="px-4 py-2 rounded-xl bg-gray-300 text-black text-sm whitespace-nowrap">
-          Scène
+
+        <button
+          className={`px-4 py-2 rounded-xl text-sm whitespace-nowrap ${
+            activeFilter === PointType.TRASH ? "bg-orange-500 text-white" : "bg-white text-black"
+          }`}
+          onClick={() => setActiveFilter((filter) => filter == PointType.TRASH ? null : PointType.TRASH)}
+        >
+          Poubelle
         </button>
       </div>
+
 
       {/* Légende */}
       <div className="absolute bottom-24 right-4 bg-white p-3 rounded-2xl shadow-xl text-sm w-40 z-10">
