@@ -4,6 +4,7 @@ export const Users = [
     email: "alice@example.com",
     password: "password123",
     name: "Alice Martin",
+    icon: "1.jpg",
     role: "admin"
   },
   {
@@ -11,6 +12,7 @@ export const Users = [
     email: "bob@example.com",
     password: "qwerty456",
     name: "Bob Dupont",
+    icon: "2.jpg",
     role: "user"
   },
   {
@@ -18,6 +20,7 @@ export const Users = [
     email: "carol@example.com",
     password: "test789",
     name: "Carol Bernard",
+    icon: "3.jpg",
     role: "user"
   },
   {
@@ -25,6 +28,7 @@ export const Users = [
     email: "david@example.com",
     password: "mypassword!",
     name: "David Leroy",
+    icon: "4.jpg",
     role: "moderator"
   }
 ];
