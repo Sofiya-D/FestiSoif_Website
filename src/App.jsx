@@ -7,7 +7,7 @@ import DetailsPage from "./pages/DetailsPage";
 import LoginPage from "./pages/LoginPage";
 import PhoneRA from "./pages/PhoneRA";
 import ProfilePage from "./pages/ProfilePage";
-
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   const url = window.location.href;
@@ -26,6 +26,7 @@ export default function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/phonera/:id" element={<PhoneRA />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
         { !paths.includes(pathname) &&
