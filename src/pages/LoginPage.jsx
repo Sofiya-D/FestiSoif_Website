@@ -2,7 +2,29 @@ import React from "react";
 import "../style/loginPage.css";
 import logoEcho from "../assets/echo_logo.png";
 
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 export default function LoginPage() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null); 
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem("currentUser");
+    if (savedUser) {
+      setCurrentUser(JSON.parse(savedUser));
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
+
   return (
     <div className="login-container">
 

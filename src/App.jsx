@@ -25,7 +25,7 @@ export default function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/details/:id" element={<DetailsPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/phonera" element={<PhoneRA />} />
+            <Route path="/phonera/:id" element={<PhoneRA />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/oups" element={<ContentMissingPage />} />
           </Routes>
