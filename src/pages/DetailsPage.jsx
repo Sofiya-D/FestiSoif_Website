@@ -1,25 +1,31 @@
 import React from 'react'
-import {BadgeQuestionMark, ChevronLeft, Droplets, Toilet, Trash2, Utensils} from 'lucide-react'
+import {ChevronLeft, Droplets, Toilet, Trash2, Utensils} from 'lucide-react'
 import { useParams } from 'react-router-dom'
-import {resources} from '../js/resources_db'
-// Default resource in case of invalid id
-let defaultResource = {
-  type: "Unknown",
-  icon:"Unkown",
-}
+import { points, PointType } from '../js/data'
 
 
 function DetailsPage() {
-  // Get the id from the URL parameters
   const {id} = useParams();
-  console.log(id)
-  //current resource based on id
-  let current = null
-  // Parse id to integer
-  const parseId = parseInt(id, 10);
-  // If no id is provided or id is invalid, use default resource, else find resource by id or use default if not found
-  current = isNaN(parseId) ? defaultResource : resources.find(r => r.id === parseId) ?? defaultResource;
-  return (
+  let current = points.find(r => r.id == id);
+
+
+
+  const getIconByType = (type) => {
+    switch(type) {
+        case PointType.WATER:
+            return <Droplets color='White' size={100} />;
+        case PointType.TOILET:
+            return <Toilet color='White' size={100} />;
+        case PointType.FOOD:
+            return <Utensils color='White' size={100} />;
+        case PointType.TRASH:
+            return <Trash2 color='White' size={100} />;
+        default:
+            null;
+    }
+  }
+
+  return ( current && 
     <div className='w-full h-full'>
       <div  className='w-full text-black  mt-5  font-bold text-2xl'>
         <ChevronLeft size={25} />
@@ -29,16 +35,11 @@ function DetailsPage() {
           <h3 className=' w-full font-extrabold text-2xl text-center text-white'>
             {
               // Display resource type or "Unknown Resource" if not found
-              current.type ?? "Uknown Ressource"
+              current.name ?? "Uknown Ressource"
             }
           </h3>
           {
-            // Check for possible icons in the menu, if the icon isn't one of those we expect show a question mark icon
-            current.icon === "Droplets" ? <Droplets color='White'size={100}/> : 
-            current.icon === "Toilet" ? <Toilet color='White' size={100} /> :
-            current.icon === "Utensils" ? <Utensils color='White' size={100} /> :
-            current.icon === "Trash2" ? <Trash2 color='White' size={100} /> :
-            <BadgeQuestionMark color='White' size={100} />
+            getIconByType(current.type)
           }
         </div>
         <div className='flex flex-col justify-center gap-4 items-center px-2 w-full h-[25%] bg-linear-to-b from-[#4568DC] to-[#B06AB3] rounded-md shadow-lg shadow-black/25'>
@@ -62,10 +63,10 @@ function DetailsPage() {
           </h3>
         </div>
         <div className='flex flex-col gap-4 w-full h-[25%] justify-center items-center mt-10 p-[5%]'>
-          <button className='bg-white w-full font-bold text-xl h-12 rounded-lg border border-gray-300 shadow-lg shadow-black/25'>
+          <button className='bg-white w-full font-bold text-lg p-2 m-2 rounded-lg border border-gray-300 shadow-lg shadow-black/25'>
             Y Aller
           </button>
-          <button className='bg-[#3B27F3] w-full font-bold text-xl text-white h-12 rounded-lg shadow-xl shadow-black/25'>
+          <button className='bg-[#3B27F3] w-full font-bold text-lg m-2 text-white p-4 rounded-lg shadow-xl shadow-black/25'>
             Commencer sur les lunettes RA
           </button>
         </div>

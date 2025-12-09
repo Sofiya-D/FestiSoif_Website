@@ -14,3 +14,4 @@ export const getPointColorByType = (point_type) => {
             return "red";
     }
 }
+
