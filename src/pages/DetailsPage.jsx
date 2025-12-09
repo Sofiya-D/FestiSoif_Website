@@ -1,7 +1,6 @@
 import React from 'react'
 import {BadgeQuestionMark, ChevronLeft, Droplets, Toilet, Trash2, Utensils} from 'lucide-react'
 import { useParams } from 'react-router-dom'
-import {resources} from '../js/resources_db'
 // Default resource in case of invalid id
 let defaultResource = {
   type: "Unknown",
