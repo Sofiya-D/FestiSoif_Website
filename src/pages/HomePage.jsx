@@ -33,7 +33,6 @@ export default function HomePage() {
           <TileLayer url={maps[mapType]} />
           <Marker position={center} />
           <MapPointer points={points} />
-          <MapClick onClick={(pos) => console.log("Clicked position:", pos)} />
         </MapContainer>
       </div>
 

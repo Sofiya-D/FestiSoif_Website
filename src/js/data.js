@@ -13,6 +13,7 @@ export const points = [
     name: "Point d'eau zone A",
     desc: "Fontaine potable accessible",
     type: PointType.WATER,
+    occupation: "Faible"
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ export const points = [
     name: "Toilettes zone B",
     desc: "Toilettes publiques propres",
     type: PointType.TOILET,
+    occupation: "Élevée"
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ export const points = [
     name: "Restauration zone C",
     desc: "Snack et boissons",
     type: PointType.FOOD,
+    occupation: "Faible"
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ export const points = [
     name: "Poubelle zone D",
     desc: "Déchets recyclables",
     type: PointType.TRASH,
+    occupation: "Élevée"
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ export const points = [
     name: "Point d'eau zone E",
     desc: "Fontaine pour se rafraîchir",
     type: PointType.WATER,
+    occupation: "Moyenne"
   },
   {
     id: 6,
@@ -53,6 +58,7 @@ export const points = [
     name: "Toilettes zone F",
     desc: "Sanitaires publics",
     type: PointType.TOILET,
+    occupation: "Moyenne"
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export const points = [
     name: "Restauration zone G",
     desc: "Petits snacks et boissons",
     type: PointType.FOOD,
+    occupation: "Élevée"
   },
   {
     id: 8,
@@ -69,6 +76,7 @@ export const points = [
     name: "Poubelle zone H",
     desc: "Pour les déchets ménagers",
     type: PointType.TRASH,
+    occupation: "Faible"
   },
 ];
 
