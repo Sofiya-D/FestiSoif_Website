@@ -107,6 +107,7 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 
 ### Page mon profil
 #### Affichage 
+* En haut à gauche de l'écran se trouve un bouton `Retour`. 
 * Une icône avec la photo de profil de l'utilisateur apparaît en haut à gauche de l'écran, suivie du nom de l'utilisateur.  
 * En-dessous se trouve un libellé "Mode Offline" suivi d'un petit slider (bouton à 2 états).  
 * En-dessous se trouvent en disposition verticale une liste de sections:  
@@ -116,7 +117,6 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
   * Accessibilité,  
   * A propos,  
   * Aide,  
-  * Déconnexion.  
-* En bas de l'écran se trouve un bouton `Retour`.  
+  * Déconnexion.   
 #### Interactions 
-* L'utilisateur peut cliquer sur le bouton `Retour` pour retourner à la page précédente, depuis laquelle il est arrivé.  
+* L'utilisateur peut cliquer sur le bouton `Retour` pour retourner à la page précédente, depuis laquelle il est arrivé.
