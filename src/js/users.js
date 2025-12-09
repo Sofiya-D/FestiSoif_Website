@@ -1,4 +1,4 @@
-export const Users = [
+export let Users = [
   {
     id: 1,
     email: "alice@example.com",
@@ -32,3 +32,22 @@ export const Users = [
     role: "moderator"
   }
 ];
+
+
+const savedUsers = localStorage.getItem("users");
+if (savedUsers) {
+  Users = [...Users, ...JSON.parse(savedUsers)];
+}
+
+export function addUser(newUser) {
+  const id = Users.length > 0 ? Users[Users.length - 1].id + 1 : 1;
+  const userWithId = { id, ...newUser };
+
+  Users.push(userWithId);
+
+  const extraUsers = JSON.parse(localStorage.getItem("users") || "[]");
+  extraUsers.push(userWithId);
+  localStorage.setItem("users", JSON.stringify(extraUsers));
+
+  return userWithId;
+}
