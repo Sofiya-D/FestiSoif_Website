@@ -6,7 +6,7 @@ import SignupPage from "./pages/SignupPage";
 import DetailsPage from "./pages/DetailsPage";
 import LoginPage from "./pages/LoginPage";
 import PhoneRA from "./pages/PhoneRA";
-
+import ProfilePage from "./pages/ProfilePage";
 
 
 export default function App() {
@@ -25,6 +25,7 @@ export default function App() {
             <Route path="/details/:id" element={<DetailsPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/phonera/:id" element={<PhoneRA />} />
+            <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </div>
         { !paths.includes(pathname) &&
