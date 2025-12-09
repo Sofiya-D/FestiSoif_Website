@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import logoEcho from "../assets/echo_logo.png"; // replace with the user's avatar if available
-import { useNavigate } from "react-router-dom";
+import logoEcho from "../assets/echo_logo.png"; 
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function ProfilePage() {
   // TODO: Add actual user data (username, profile picture)
+  // user = JSON.parse(localstorage.getuser("user"))
   const [user] = useState({ name: "Username", avatar: logoEcho });
 
   // Offline toggle (persist in localStorage)
@@ -30,6 +31,7 @@ export default function ProfilePage() {
   ];
 
   const navigate = useNavigate(); // Useful for a back button if wanted
+  const location = useLocation();
 
   function handleSectionClick(id) {
     // Replace with real routing or modal logic per section
@@ -40,13 +42,19 @@ export default function ProfilePage() {
       navigate("/"); // or another route
     } else {
       // navigate to a settings subsection (optional)
-      navigate(`/profile/${id}`);
+      navigate(`/oups`);
     }
   }
 
   return (
     <div className="h-full w-full p-6 bg-gray-50 text-gray-800 flex flex-col">
       <header className="flex items-center gap-4 mb-6">
+        {<button 
+        onClick={() => navigate(-1)} 
+        className="mt-4 px-3 py-2 rounded bg-white shadow hover:bg-gray-100"
+        >
+            Retour
+        </button>}
         <img
           src={user.avatar}
           alt={`${user.name} avatar`}
@@ -94,7 +102,6 @@ export default function ProfilePage() {
         </ul>
       </main>
 
-      {<button onClick={() => navigate(-1)} className="mt-4">Retour</button>}
     </div>
   );
 }

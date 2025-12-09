@@ -7,6 +7,7 @@ import DetailsPage from "./pages/DetailsPage";
 import LoginPage from "./pages/LoginPage";
 import PhoneRA from "./pages/PhoneRA";
 import ProfilePage from "./pages/ProfilePage";
+import ContentMissingPage from "./pages/ContentMissingPage";
 
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/phonera" element={<PhoneRA />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/oups" element={<ContentMissingPage />} />
           </Routes>
         </div>
         { !paths.includes(pathname) &&
