@@ -17,7 +17,7 @@ export default function LoginPage() {
             className="icon"
             alt="Google"
           />
-          <span>Google</span>
+          <span>Google zakaria</span>
         </button>
 
         <button className="social-btn">
