@@ -1,4 +1,26 @@
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+
 export default function SignupPage() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null); 
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem("currentUser");
+    if (savedUser) {
+      setCurrentUser(JSON.parse(savedUser));
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
 
   return (
     <div className="w-screen h-screen relative bg-gray-200 flex justify-center items-center">
