@@ -42,6 +42,8 @@ export default function LoginPage() {
 
   return (
     <div className="login-container">
+      <img src={"/assets/elipse.png"} alt="elipse" width={150} className="absolute z-0 top-[-3.2rem] left-[-2.2rem]"/>
+      <img src={"/assets/stars.png"} alt="stars" width={130} className="absolute z-0 bottom-32 right-[-1rem] rotate-x-180"/>
 
       <img src={logoEcho} alt="Echo Festival" className="logo-echo" />
 
@@ -76,7 +78,7 @@ export default function LoginPage() {
 
       <div className="w-full flex flex-col gap-4 items-center">
         <button 
-        className="bg-black py-[0.7rem] px-4 text-white rounded-lg font-semibold w-[80%] cursor-pointer" type="button"
+        className="bg-black py-[0.7rem] px-4 z-2 text-white rounded-lg font-semibold w-[80%] cursor-pointer" type="button"
         onClick={setGuest}>
           Continuer en invité
         </button>

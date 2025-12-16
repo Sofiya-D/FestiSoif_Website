@@ -31,6 +31,7 @@ function DetailsPage() {
             
   return ( current && 
     <div className='w-full h-full'>
+      <img src={"/assets/stars.png"} alt="stars" width={130} className="absolute z-0 bottom-24 right-[-2.5rem] rotate-x-180"/>
       <div  className='w-full text-black  mt-5 font-bold text-2xl cursor-pointer' onClick={() => navigate(-1)}>
         <ChevronLeft size={25} />
       </div>
@@ -76,7 +77,7 @@ function DetailsPage() {
           
             Y Aller
           </button>
-          <button className='bg-[#3B27F3] w-full font-bold text-lg m-2 text-white p-4 rounded-lg shadow-xl shadow-black/25'>
+          <button className='bg-[#3B27F3] w-full font-bold text-lg m-2 z-20 text-white p-4 rounded-lg shadow-xl shadow-black/25'>
             Commencer sur les lunettes RA
           </button>
         </div>
