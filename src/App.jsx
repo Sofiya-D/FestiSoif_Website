@@ -9,30 +9,31 @@ import PhoneRA from "./pages/PhoneRA";
 import ProfilePage from "./pages/ProfilePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import SplashScreen from "./pages/SplashScreen";
+import ContentMissingPage from "./pages/ContentMissingPage";
 
 export default function App() {
   const url = window.location.href;
   const pathname = url.split("/")[3];
-  const paths = ["seconnecter", "signup"];
+  const paths = ["seconnecter", "signup", "/"];
 
   return (
     <BrowserRouter>
       <div className="flex flex-row h-screen w-screen">
         <div className="h-[90%] w-full bg-gray-50 text-gray-800">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<SplashScreen />} />
+            <Route path="/home" element={<HomePage />} />
             <Route path="/seconnecter" element={<SeConnecterPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/details/:id" element={<DetailsPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/phonera/:id" element={<PhoneRA />} />
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/splash" element={<SplashScreen />} />
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/oups" element={<ContentMissingPage />} />
           </Routes>
         </div>
-        { !paths.includes(pathname) &&
+        { (!paths.includes(pathname) && pathname != "") &&
           <BottomBar />
         }
       </div>

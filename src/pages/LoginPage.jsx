@@ -53,8 +53,8 @@ export default function LoginPage() {
       </div>
 
       {/* Boutons principaux */}
-      <button className="main-btn login-btn">Se Connecter</button>
-      <button className="main-btn register-btn">Créer un compte</button>
+      <button className="main-btn login-btn" onClick={() => navigate("/seconnecter")}>Se Connecter</button>
+      <button className="main-btn register-btn" onClick={() => navigate("/signup")}>Créer un compte</button>
 
       {/* Carte QR */}
       <div className="qr-card">
