@@ -3,7 +3,7 @@ Repo pour la partie Web de notre module CAI à l'ENIB.
 Nous sommes le **Groupe-02**.  
 On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**  
 
-$\color{red}{\text{Deadline: 21/12/2021 23h59}}$  
+$\color{red}{\text{Deadline: 21/12/2025 23h59}}$  
 Livrables: **code source** et **dossier pdf** sur la branche **`main`** du git  
 
 ## Contributeurs, roles et distribution des pages
