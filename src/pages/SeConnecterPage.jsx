@@ -45,8 +45,7 @@ export default function SeConnecterPage() {
 
     localStorage.setItem("currentUser", JSON.stringify(user));
     
-    alert(`Bienvenue, ${user.name} !`);
-    window.location.href = "/";
+    window.location.href = "/home";
   };
 
   return ( !isLoggedIn &&

@@ -18,7 +18,6 @@ export default function SignupPage() {
     }
 
     const newUser = addUser({ name, email, password });
-    alert(`Compte créé pour ${newUser.name} !`);
 
     navigate("/login");
   };
