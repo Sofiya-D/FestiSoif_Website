@@ -19,12 +19,6 @@ export default function LoginPage() {
     }
   }, []);
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/");
-    }
-  }, [isLoggedIn]);
-
   return (
     <div className="login-container">
 
