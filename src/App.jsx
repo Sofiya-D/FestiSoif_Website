@@ -7,8 +7,8 @@ import DetailsPage from "./pages/DetailsPage";
 import LoginPage from "./pages/LoginPage";
 import PhoneRA from "./pages/PhoneRA";
 import ProfilePage from "./pages/ProfilePage";
-import NotFoundPage from "./pages/NotFoundPage";import ContentMissingPage from "./pages/ContentMissingPage";
-
+import NotFoundPage from "./pages/NotFoundPage";
+import SplashScreen from "./pages/SplashScreen";
 
 export default function App() {
   const url = window.location.href;
@@ -27,6 +27,7 @@ export default function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/phonera/:id" element={<PhoneRA />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/splash" element={<SplashScreen />} />
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/oups" element={<ContentMissingPage />} />
           </Routes>
