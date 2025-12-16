@@ -1,7 +1,10 @@
 # FestiSoif Website
 Repo pour la partie Web de notre module CAI à l'ENIB.  
 Nous sommes le **Groupe-02**.  
-On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
+On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**  
+
+<span style="color:red">*Deadline: 21/12/2021 23h59*</span>  
+_Sur la branche "main" du git: code source et dossier pdf_  
 
 ## Contributeurs, roles et distribution des pages
 
