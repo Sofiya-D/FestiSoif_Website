@@ -34,12 +34,6 @@ export default function SignupPage() {
     }
   }, []);
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/");
-    }
-  }, [isLoggedIn]);
-
   return (
     <div className="w-screen h-screen relative bg-gray-200 flex justify-center items-center">
         <div className="flex flex-col gap-6 w-full h-full justify-center items-center">

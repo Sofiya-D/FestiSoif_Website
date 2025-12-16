@@ -23,12 +23,6 @@ export default function SeConnecterPage() {
     }
   }, []);
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/");
-    }
-  }, [isLoggedIn]);
-
   const login = () => {
     
     const user = Users.find(
@@ -48,7 +42,7 @@ export default function SeConnecterPage() {
     window.location.href = "/home";
   };
 
-  return ( !isLoggedIn &&
+  return (
     <div className="w-screen h-screen relative bg-gray-200 flex justify-center items-center">
         <div className="flex flex-col gap-6 w-full h-full justify-center items-center">
             <h1 className="text-3xl font-extrabold mb-12 text-left w-[80%] md:w-[30%]">Se connecter</h1>
