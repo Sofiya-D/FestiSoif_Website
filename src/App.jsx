@@ -29,6 +29,7 @@ export default function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/splash" element={<SplashScreen />} />
             <Route path="*" element={<NotFoundPage />} />
+            <Route path="/oups" element={<ContentMissingPage />} />
           </Routes>
         </div>
         { !paths.includes(pathname) &&
