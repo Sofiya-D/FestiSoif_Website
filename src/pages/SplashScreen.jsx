@@ -6,9 +6,8 @@ function SplashScreen() {
     const navigate = useNavigate();
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
-      {/* BLOB EN HAUT À GAUCHE */}
-      <div className="absolute -top-24 -left-24 w-52 h-52 bg-cyan-400 rounded-br-[999px] border-br-[4px] border-r-[4px] border-slate-900">
-        </div>
+      <img src={"/assets/elipse.png"} alt="elipse" width={120} className="absolute z-0 top-[-3.2rem] left-[-2.2rem]"/>
+      <img src={"/assets/stars.png"} alt="stars" width={130} className="absolute z-0 bottom-0 right-[-2.5rem] rotate-x-180"/>
 
       {/* CONTENU */}
       <main className="px-6 pt-16 flex flex-col items-center justify-center">

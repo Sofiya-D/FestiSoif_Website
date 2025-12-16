@@ -44,6 +44,8 @@ export default function SeConnecterPage() {
 
   return (
     <div className="w-screen h-screen relative bg-gray-200 flex justify-center items-center">
+      <img src={"/assets/elipse.png"} alt="elipse" width={130} className="absolute z-0 top-[-3.2rem] right-[-2.2rem] rotate-x-180"/>
+      <img src={"/assets/stars.png"} alt="stars" width={130} className="absolute z-0 bottom-0 left-[-2.5rem]"/>
         <div className="flex flex-col gap-6 w-full h-full justify-center items-center">
             <h1 className="text-3xl font-extrabold mb-12 text-left w-[80%] md:w-[30%]">Se connecter</h1>
             <div className="w-[80%] gap-6 md:w-[30%] flex flex-col md:gap-4">

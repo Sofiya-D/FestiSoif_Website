@@ -35,7 +35,9 @@ export default function SignupPage() {
   }, []);
 
   return (
-    <div className="w-screen h-screen relative bg-gray-200 flex justify-center items-center">
+    <div className="w-screen h-screen relative bg-gray-100 flex justify-center items-center">
+      <img src={"/assets/elipse.png"} alt="elipse" width={120} className="absolute z-0 top-[-3.2rem] left-[-2.2rem]"/>
+      <img src={"/assets/stars.png"} alt="stars" width={130} className="absolute z-0 bottom-0 right-[-2.5rem] rotate-x-180"/>
         <div className="flex flex-col gap-6 w-full h-full justify-center items-center">
             <h1 className="text-3xl font-bold mb-12">Créer un compte</h1>
             <div className="w-[80%] gap-6 md:w-[30%] flex flex-col md:gap-4">
