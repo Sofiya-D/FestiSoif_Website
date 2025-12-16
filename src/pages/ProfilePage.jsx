@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import logoEcho from "../assets/echo_logo.png"; 
-import { useNavigate, useParams } from "react-router-dom";
-// import avatar from "../assets/img/avatar.jpg"
+import { useNavigate } from "react-router-dom";
 
 export default function ProfilePage() {
-  const user = JSON.parse(localStorage.getItem("currentUser"))
-  console.log(user)
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  const navigate = useNavigate();
 
-  // Offline toggle (persist in localStorage)
   const [offline, setOffline] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("profile_offline")) ?? false;
@@ -25,85 +22,83 @@ export default function ProfilePage() {
     { id: "language", label: "Langue" },
     { id: "theme", label: "Thème" },
     { id: "accessibility", label: "Accessibilité" },
-    { id: "about", label: "A propos" },
+    { id: "about", label: "À propos" },
     { id: "help", label: "Aide" },
     { id: "logout", label: "Déconnexion" },
   ];
 
-  const navigate = useNavigate();
-  
   function handleSectionClick(id) {
     if (id === "logout") {
-      // logout flow: clear auth, then navigate to home
-      localStorage.removeItem('authToken');
+      localStorage.removeItem("authToken");
       navigate("/");
     } else {
-      // navigate to a settings subsection (optional)
-      navigate(`/oups`);
+      navigate("/oups");
     }
   }
 
   return (
-    <div className="h-full w-full p-6 bg-gray-50 text-gray-800 flex flex-col">
-      <header className="flex items-center gap-4 mb-6">
-        {<button 
-        onClick={() => navigate(-1)} 
-        className="mt-4 px-3 py-2 rounded bg-white shadow hover:bg-gray-100"
-        >
-            Retour
-        </button>}
-        <img
-          src={"/avatars/"+user.icon}
-          // src={avatar}
-          alt={`${user.name} avatar`}
-          className="w-12 h-12 rounded-full object-cover"
-        />
-        <div>
-          <div className="text-lg font-semibold">
-            {
-            user.name
-            }
-            </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-white flex flex-col items-center">
 
-      <section className="mb-6">
-        <label className="flex items-center justify-between w-full">
-          <div className="text-sm font-medium">Mode Offline</div>
+      {/* Header */}
+      <div className="w-full max-w-md px-6 pt-8 pb-6 flex flex-row gap-4 justify_center items-center">
+        <img
+          src={`/avatars/${user.icon}`}
+          alt="avatar"
+          className="w-16 h-16 rounded-full object-cover mb-4"
+        />
+        <h1 className="text-xl font-extrabold tracking-wide">
+          {user.name.toUpperCase()}
+        </h1>
+      </div>
+
+      {/* Dark panel */}
+      <div className="w-full flex-1 bg-black rounded-tl-[40px] px-6 pt-8 text-white flex flex-col">
+
+        {/* Offline toggle */}
+        <div className="flex items-center justify-between pb-6 border-b border-white/20">
+          <span className="text-lg font-medium">Mode Offline</span>
+
           <button
             aria-pressed={offline}
-            aria-label="Toggle offline mode"
-            onClick={() => setOffline((s) => !s)}
-            className={`relative inline-flex items-center h-6 w-12 rounded-full transition-colors duration-200 ${
-              offline ? "bg-green-500" : "bg-gray-300"
+            onClick={() => setOffline(!offline)}
+            className={`relative w-14 h-8 rounded-full transition-colors ${
+              offline ? "bg-orange-500" : "bg-gray-600"
             }`}
           >
             <span
-              className={`inline-block h-5 w-5 bg-white rounded-full shadow transform transition-transform duration-200 ${
-                offline ? "translate-x-6" : "translate-x-1"
+              className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full transition-transform ${
+                offline ? "translate-x-6" : ""
               }`}
             />
           </button>
-        </label>
-      </section>
+        </div>
 
-      <main className="flex-1 overflow-auto">
-        <ul className="flex flex-col gap-2">
+        {/* Menu */}
+        <ul className="flex-1 pt-4">
           {sections.map((s) => (
-            <li key={s.id}>
+            <li
+              key={s.id}
+              className="border-b border-white/10 last:border-none"
+            >
               <button
                 onClick={() => handleSectionClick(s.id)}
-                className="w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm hover:bg-gray-100 flex items-center justify-between"
-                aria-label={s.label}
+                className="w-full flex items-center justify-between py-4 text-lg"
               >
-                <span className="text-base">{s.label}</span>
-                <span className="text-gray-400">{"›"}</span>
+                <span>{s.label}</span>
+                <span className="text-white/50 text-2xl">›</span>
               </button>
             </li>
           ))}
         </ul>
-      </main>
 
+        {/* Bottom button */}
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-6 mt-4 w-full py-4 rounded-full bg-white text-black text-xl font-semibold"
+        >
+          Retour
+        </button>
+      </div>
     </div>
   );
 }

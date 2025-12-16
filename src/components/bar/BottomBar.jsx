@@ -18,7 +18,7 @@ export default function BottomBar() {
           <p className="text-xs">Mode RA</p>
         </div>
       </Link>
-      <Link to="/details/7">
+      <Link to="/profile">
         <div className="flex flex-col items-center text-black">
           <span className="text-xl">👤</span>
           <p className="text-xs">Profil</p>
