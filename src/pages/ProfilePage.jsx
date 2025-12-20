@@ -29,8 +29,9 @@ export default function ProfilePage() {
 
   function handleSectionClick(id) {
     if (id === "logout") {
-      localStorage.removeItem("authToken");
-      navigate("/");
+      localStorage.removeItem("currentUser");
+      localStorage.removeItem("profile_offline");
+      window.location.href = "/";
     } else {
       navigate("/oups");
     }
