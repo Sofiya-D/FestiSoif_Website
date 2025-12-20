@@ -77,7 +77,7 @@ function DetailsPage() {
           
             Y Aller
           </button>
-          <button className='bg-[#3B27F3] w-full font-bold text-lg m-2 z-20 text-white p-4 rounded-lg shadow-xl shadow-black/25'>
+          <button className='bg-[#3B27F3] w-full font-bold text-lg m-2 z-20 text-white p-4 rounded-lg shadow-xl shadow-black/25' onClick={()=>navigate("/oups")}>
             Commencer sur les lunettes RA
           </button>
         </div>

@@ -75,10 +75,10 @@ export default function PhoneRA() {
 
       {/* Bottom buttons */}
       <div className="absolute bottom-25 w-full flex flex-col items-center gap-4 px-6">
-        <button className="bg-blue-600 text-white w-full py-4 rounded-2xl text-lg font-semibold shadow">
+        <button className="bg-blue-600 text-white w-full py-4 rounded-2xl text-lg font-semibold shadow" onClick={()=>navigate("/oups")}>
           Utiliser mes lunettes RA
         </button>
-        <button className="bg-white text-black w-full py-4 rounded-2xl text-lg font-semibold shadow border">
+        <button className="bg-white text-black w-full py-4 rounded-2xl text-lg font-semibold shadow border" onClick={() => navigate(-1)}>
           Quitter la RA
         </button>
       </div>
