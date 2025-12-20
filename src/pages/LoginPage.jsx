@@ -48,8 +48,8 @@ export default function LoginPage() {
       <img src={logoEcho} alt="Echo Festival" className="logo-echo" />
 
       <div className="w-[80%] md:w-[30%] flex gap-2 items-center justify-center">
-        <div className="w-full"><button className="py-2 px-4 text-stone-800 rounded-xl shadow-md shadow-stone-300 font-semibold w-full flex justify-center gap-4 items-center content-center" type="button"><img src={google} alt="google" width={20}/> <p>Google</p></button></div>
-        <div className="w-full"><button className="py-2 px-4 text-stone-800 rounded-xl shadow-md shadow-stone-300 font-semibold w-full flex justify-center gap-4 items-center content-center" type="button"><img src={facebook} alt="facebook" width={20}/>Facebook</button></div>
+        <div className="w-full"><button className="py-2 px-4 text-stone-800 rounded-xl shadow-md shadow-stone-300 font-semibold w-full flex justify-center gap-4 items-center content-center" type="button" onClick={()=>navigate("/oups")}><img src={google} alt="google" width={20}/> <p>Google</p></button></div>
+        <div className="w-full"><button className="py-2 px-4 text-stone-800 rounded-xl shadow-md shadow-stone-300 font-semibold w-full flex justify-center gap-4 items-center content-center" type="button" onClick={()=>navigate("/oups")}><img src={facebook} alt="facebook" width={20}/>Facebook</button></div>
       </div>
 
       <div className="w-full flex flex-col gap-6 items-center mt-2">

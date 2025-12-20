@@ -86,8 +86,8 @@ export default function SeConnecterPage() {
             </div>
             <div className="w-[80%] md:w-[30%] flex flex-col gap-2 items-center">
               <h2 className="text-sm text-stone-700 font-extrabold text-left w-full">Social Logins</h2>
-              <div className="w-full"><button className="border border-stone-700 py-2 px-4 text-stone-800 rounded-3xl font-semibold w-full flex justify-center gap-4 items-center content-center" type="button"><img src={google} alt="google" width={20}/> <p>Continuer avec Google</p></button></div>
-              <div className="w-full"><button className="border border-stone-700 py-2 px-4 text-stone-800 rounded-3xl font-semibold w-full flex justify-center gap-4 items-center content-center" type="button"><img src={facebook} alt="facebook" width={20}/> Continuer avec Facebook</button></div>
+              <div className="w-full"><button className="border border-stone-700 py-2 px-4 text-stone-800 rounded-3xl font-semibold w-full flex justify-center gap-4 items-center content-center" type="button" onClick={()=>navigate("/oups")}><img src={google} alt="google" width={20}/> <p>Continuer avec Google</p></button></div>
+              <div className="w-full"><button className="border border-stone-700 py-2 px-4 text-stone-800 rounded-3xl font-semibold w-full flex justify-center gap-4 items-center content-center" type="button" onClick={()=>navigate("/oups")}><img src={facebook} alt="facebook" width={20}/> Continuer avec Facebook</button></div>
               <p className="mt-4">Pas de compte ? <a className="text-blue-500" href="/signup">Créer un compte</a></p>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 export default function ProfilePage() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -39,9 +40,13 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center">
+      {/* Back button */}
+      <button onClick={() => navigate(-1)} className="absolute top-6 left-4 w-10 h-10 bg-gray-200/80 backdrop-blur rounded-full flex items-center justify-center text-black text-2xl shadow">
+        <ArrowLeft />
+      </button>
 
       {/* Header */}
-      <div className="w-full max-w-md px-6 pt-8 pb-6 flex flex-row gap-4 justify_center items-center">
+      <div className="w-full max-w-md px-6 pt-8 mt-10 pb-6 flex flex-row gap-4 justify_center items-center">
         <img
           src={`/avatars/${user.icon}`}
           alt="avatar"
