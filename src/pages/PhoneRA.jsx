@@ -34,13 +34,13 @@ export default function PhoneRA() {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* <video
+      <video
         ref={videoRef}
         autoPlay
         playsInline
         muted
         className="absolute inset-0 w-full h-full object-cover"
-      /> */}
+      />
 
       {/* Black transparent overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
@@ -51,7 +51,8 @@ export default function PhoneRA() {
       </button>
 
       {/* User avatar + label */}
-      <div className="absolute top-20 left-4 flex items-center gap-2">
+      <div className="absolute top-20 left-4 flex items-center gap-2"
+        onClick={() => navigate("/profile")} >
         <img
           src={avatar}
           className="w-10 h-10 rounded-full border-2 border-white"

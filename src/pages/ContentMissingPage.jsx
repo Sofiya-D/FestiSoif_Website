@@ -6,7 +6,6 @@ export default function ContentMissingPage() {
   const navigate = useNavigate();
 
   function handleBack() {
-    // Prefer browser history back; if there is no history, fallback to home
     if (window.history.length > 1) navigate(-1);
     else navigate("/"); // deterministic fallback
   }

@@ -27,7 +27,7 @@ export default function LoginPage() {
       email: "guest",
       password: "guest",
       name: "guest",
-      icon: "",
+      icon: "0.jpg",
       role: "user"
   }
 
