@@ -7,15 +7,15 @@ On choisit de développer pour un affichage optimal sur **IPhone 12 Pro**
 
 | Contributeur        | Role      | Pages  |
 | ------------------ | --------- | ------ |
-| Ayyoub Boulahri    | Chef de projet | map + RA |
-| Yassine El Mesbahy |  | détails + accueil|
-| Sofiya Debois      |  | profil |
+| Ayyoub Boulahri    | Chef de projet | accueil + RA + NotFound |
+| Yassine El Mesbahy |  | détails + splash|
+| Sofiya Debois      |  | profil + oups |
 | Ilias Reguig       |  | register + connexion |
 | Zakaria Boumline   |  | login |  
 
 ## Technologies
 * HTML/CSS
-* Framework: React
+* Framework: React / Tailwind CSS
 
 ## Cahier des charges
 
